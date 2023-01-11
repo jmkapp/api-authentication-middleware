@@ -32,9 +32,9 @@ namespace AuthenticationApi
 
             app.UseHttpsRedirection();
 
-            app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseMiddleware<AuthenticateMiddleware>();
 
             app.MapControllers();
 
